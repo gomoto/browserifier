@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "description": "Browserify boilerplate",
   "scripts": {
-    "postinstall": "typings install"
+    "postinstall": "typings install",
+    "version": "tsc && git add -A",
+    "postversion": "git push && git push --tags"
   },
   "dependencies": {
     "browserify": "^13.1.0",
