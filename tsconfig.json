@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "noEmitOnError": false,
+    "noImplicitAny": true,
+    "removeComments": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "target": "es5"
+  },
+  "compileOnSave": false,
+  "buildOnSave": false,
+  "filesGlob": [
+    "browserifier.ts",
+    "typings/**/*.d.ts"
+  ],
+  "atom": {
+    "rewriteTsconfig": true
+  },
+  "files": [
+    "browserifier.ts",
+    "typings/globals/browserify/index.d.ts",
+    "typings/globals/node/index.d.ts",
+    "typings/globals/object-assign/index.d.ts",
+    "typings/index.d.ts"
+  ]
+}
