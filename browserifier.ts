@@ -1,5 +1,6 @@
 import browserify = require('browserify');
 import fs = require('fs');
+import glob = require('glob');
 import objectAssign = require('object-assign');
 
 
@@ -34,6 +35,8 @@ class Browserifier {
     output: string,
     options = <BrowserifierOptions> {}
   ) {
+    var input = typeof entries === 'string' ? glob.sync(entries) : entries;
+
     var browserifyOptions = {};
 
     // watchify requires these browserify options
@@ -52,7 +55,7 @@ class Browserifier {
     }
 
     // browserify instance
-    var b = browserify(entries, browserifyOptions);
+    var b = browserify(input, browserifyOptions);
 
     // watchify
     if (options.watchify) {

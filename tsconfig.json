@@ -19,6 +19,7 @@
   "files": [
     "browserifier.ts",
     "typings/globals/browserify/index.d.ts",
+    "typings/globals/glob/index.d.ts",
     "typings/globals/node/index.d.ts",
     "typings/globals/object-assign/index.d.ts",
     "typings/index.d.ts"
