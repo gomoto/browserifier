@@ -1,11 +1,13 @@
 "use strict";
 var browserify = require('browserify');
 var fs = require('fs');
+var glob = require('glob');
 var objectAssign = require('object-assign');
 var Browserifier = (function () {
     function Browserifier(entries, output, options) {
         var _this = this;
         if (options === void 0) { options = {}; }
+        var input = typeof entries === 'string' ? glob.sync(entries) : entries;
         var browserifyOptions = {};
         if (options.watchify) {
             objectAssign(browserifyOptions, {
@@ -18,7 +20,7 @@ var Browserifier = (function () {
                 debug: true
             });
         }
-        var b = browserify(entries, browserifyOptions);
+        var b = browserify(input, browserifyOptions);
         if (options.watchify) {
             b.plugin(require('watchify'));
             b.on('update', function (ids) {
